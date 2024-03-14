@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # Load environment variables from .env file
 
-intents = discord.Intents.default()
+intents = discord.Intents.all()
 bot = commands.Bot(command_prefix='!', intents=intents)
 
 initial_extensions = [

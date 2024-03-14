@@ -47,6 +47,11 @@ This project is licensed under the MIT License. See the LICENSE file for details
 - This bot uses the discord.py library.
 - GitHub API is used to fetch user and repository information.
 
+
+---
+[![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/887532157747212370)
+[![X](https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white)](https://twitter.com/codewithriza)
+
 ## Contact
 
 For any questions or feedback, feel free to contact me

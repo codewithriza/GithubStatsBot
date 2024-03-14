@@ -17,17 +17,18 @@ GithubStats Bot is a Discord bot that provides various GitHub statistics and inf
    git clone https://github.com/your-username/githubstats-bot.git
    ```
 2. Install the required dependencies:
-  ```bash
-    pip install -r requirements.txt
-  ```
+
+     ```bash
+       pip install -r requirements.txt
+     ```
 3. Set up your Discord bot token in a .env file
    ```makefile
    TOKEN=paste_your_discord_token
    ```
 4. Run the bot:
-  ```bash
-  python3 main.py
-  ```
+     ```bash
+     python3 main.py
+     ```
 ## Usage
 
 - Use the `!user <username>` command to get information about a GitHub user.

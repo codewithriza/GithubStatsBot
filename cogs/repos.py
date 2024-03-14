@@ -1,10 +1,8 @@
 import discord
 from discord.ext import commands
-from discord_components import Button, ButtonStyle, InteractionType, component
-from datetime import datetime
 import requests
 
-class Repos(commands.Cog):
+class Repo(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
@@ -31,10 +29,18 @@ class Repos(commands.Cog):
                     repo = repos[i]
                     description = repo['description'] or "No description"
                     language = repo['language'] or "Unknown"
-                    embed.add_field(name=f"{i + 1} {repo['name']}", value=f"{description}\n• {language} - {'Private' if repo['private'] else 'Public'}", inline=False)
+                    language_emoji = get_language_emoji(language)
+                    embed.add_field(name=f"{i + 1} {repo['name']}", value=f"{description}\n• {language_emoji} - {'Private' if repo['private'] else 'Public'}", inline=False)
 
                 embed.set_footer(text=f"Page {page}/{(len(repos) // 5) + 1} • {len(repos)} repositories")
                 return embed
+
+            def get_language_emoji(language):
+                language_emojis = {
+                    "Python": ":python:",
+                    "TypeScript": ":typescript:",
+                }
+                return language_emojis.get(language, language)
 
             message = await ctx.send(embed=create_embed(page), components=[
                 Button(style=ButtonStyle.blue, label="⬅️", custom_id="prev"),
@@ -42,7 +48,7 @@ class Repos(commands.Cog):
             ])
 
             while True:
-                interaction = await self.bot.wait_for("button_click")
+                interaction = await bot.wait_for("button_click")
                 if interaction.component.custom_id == "prev":
                     if page > 1:
                         page -= 1
@@ -61,4 +67,4 @@ class Repos(commands.Cog):
             await ctx.send("User not found or has no public repositories.")
 
 def setup(bot):
-    bot.add_cog(Repos(bot))
+    bot.add_cog(Repo(bot))

@@ -1,7 +1,6 @@
-# GithubStats Bot
+# GithubStats Bot 
 
-GithubStats Bot is a Discord bot that provides various GitHub statistics and information.
-
+GithubStats Bot is a Discord bot that provides various GitHub statistics and information. :octocat: 
 ## Features
 
 - **User Command**: Retrieve detailed information about a GitHub user including their bio, repositories, followers, and more.
